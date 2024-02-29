@@ -3,10 +3,16 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    private Vector3 offset = new Vector3(0, 7, -7); //camera offset
-
+    public Vector3 offset; //camera offset
+    private float currentZoom = 10f;
+    private float zoomSpeed = 4f;
     private void Update()
     {
-        transform.position = target.position + offset;
+        currentZoom -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
+        currentZoom = Mathf.Clamp(currentZoom, 5f, 15f);
+    }
+    private void LateUpdate()
+    {
+        transform.position = target.position - offset * currentZoom;
     }
 }
