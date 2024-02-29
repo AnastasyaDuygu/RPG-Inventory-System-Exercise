@@ -1,4 +1,6 @@
 
+using DG.Tweening;
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,9 +18,9 @@ public class PlayerMotor : MonoBehaviour
         if (target != null)
         {
             agent.SetDestination(target.position);
+            FaceTarget();
         }
     }
-    // Update is called once per frame
     public void MoveToPoint(Vector3 point)
     {
         agent.SetDestination(point);
@@ -26,10 +28,21 @@ public class PlayerMotor : MonoBehaviour
 
     public void FollowTarget(Interactable newTarget)
     {
+        agent.stoppingDistance = newTarget.radius * 0.8f;
+        agent.updateRotation = false;
         target = newTarget.transform;
     }
     public void StopFollowingTarget()
     {
         target = null;
+        agent.stoppingDistance = 0;
+        agent.updateRotation = true;
+    }
+    private void FaceTarget()
+    {
+        Vector3 direction = target.position - transform.position;
+        direction.y = 0; //no looking up and down
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 }
