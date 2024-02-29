@@ -43,6 +43,6 @@ public class PlayerMotor : MonoBehaviour
         Vector3 direction = target.position - transform.position;
         direction.y = 0; //no looking up and down
         Quaternion lookRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 7f);
     }
 }
