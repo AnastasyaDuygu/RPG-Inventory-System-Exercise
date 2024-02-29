@@ -2,7 +2,7 @@ using UnityEngine;
 [RequireComponent (typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour
 {
-    Camera cam;
+    public Camera cam;
     PlayerMotor motor;
     
     [SerializeField] LayerMask movementMask;
@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(0)) //left click
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -26,6 +26,15 @@ public class PlayerController : MonoBehaviour
                 //Move our player to what we hit
 
                 //Stop focusing any objects
+            }
+        }
+        if (Input.GetMouseButtonDown(1)) //right click
+        {
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, range))
+            {
+                //check if we hit interactible object
             }
         }
     }
