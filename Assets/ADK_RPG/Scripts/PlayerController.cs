@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 [RequireComponent (typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return; //no clicking through ui
         if (Input.GetMouseButtonDown(0)) //left click
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
