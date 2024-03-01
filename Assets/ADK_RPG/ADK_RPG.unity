@@ -3399,6 +3399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotsParent: {fileID: 305388089}
+  inventoryCanvas: {fileID: 1243776239}
 --- !u!1 &1684435222
 GameObject:
   m_ObjectHideFlags: 0

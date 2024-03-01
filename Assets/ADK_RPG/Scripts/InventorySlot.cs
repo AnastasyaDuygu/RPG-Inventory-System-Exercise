@@ -26,6 +26,12 @@ public class InventorySlot : MonoBehaviour
     {
         if (isEmpty) return; // do nothing if slot is empty
         //
+        UseItem();
         Inventory.Instance.Remove(item);
+    }
+    private void UseItem()
+    {
+        if (item == null) return;
+        item.Use();
     }
 }

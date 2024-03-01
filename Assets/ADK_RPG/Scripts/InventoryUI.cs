@@ -3,6 +3,7 @@ using UnityEngine;
 public class InventoryUI : MonoBehaviour
 {
     [SerializeField] Transform slotsParent;
+    [SerializeField] GameObject inventoryCanvas;
     InventorySlot[] slots;
 
     Inventory inventory;
@@ -15,7 +16,9 @@ public class InventoryUI : MonoBehaviour
     }
     void Update()
     {
-        
+        if (Input.GetKeyDown("i")){
+            inventoryCanvas.SetActive(!inventoryCanvas.activeSelf);
+        }
     }
 
     void UpdateUI()
