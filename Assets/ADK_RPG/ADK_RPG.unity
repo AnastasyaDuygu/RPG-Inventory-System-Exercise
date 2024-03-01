@@ -738,7 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d9643eb21a5d74a857a30c4b14315a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
+  radius: 1.5
   interactionTransform: {fileID: 1113916797}
 --- !u!64 &1113916804
 MeshCollider:
