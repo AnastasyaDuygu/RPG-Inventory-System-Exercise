@@ -3,7 +3,7 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
     [SerializeField] Image icon;
-    Item item;
+    public Item item;
 
     bool isEmpty = true;
 

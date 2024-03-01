@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
@@ -35,5 +36,10 @@ public class InventoryUI : MonoBehaviour
                 slots[i].ClearSlot();    
             }
         }
+    }
+
+    public InventorySlot[] getSlots()
+    {
+        return slots;
     }
 }

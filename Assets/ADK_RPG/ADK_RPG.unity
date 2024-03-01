@@ -1520,6 +1520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58dd0676bcd9c3743b67b83e30c9d5f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryUI: {fileID: 1637956504}
 --- !u!1001 &922264762
 PrefabInstance:
   m_ObjectHideFlags: 0
