@@ -12,14 +12,14 @@ public class CameraController : MonoBehaviour
     private float maxZoom = 15f;
 
     private float currentRotation = 0f;
-    private float rotationSpeed = 50f;
+    private float rotationSpeed = 80f;
 
     private void Update()
     {
         currentZoom -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
         currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
 
-        currentRotation += Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
+        currentRotation -= Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
     }
     private void LateUpdate()
     {
