@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
-    public int currentHealth { get; private set; }
+    public int currentHealth { get; set; }
     public int Maxhealth = 100;
 
     public Stat protectiveItem;
@@ -26,12 +26,12 @@ public class CharacterStats : MonoBehaviour
 
         currentHealth -= damage;
 
-        //character who takes damage jumps
+        /*character who takes damage jumps
         var randomAngle = Random.Range(0f, 10f);
         var randomVector = Quaternion.AngleAxis(randomAngle, Vector3.up) * (0 * Vector3.forward);
         //transform.DOJump(transform.position + randomVector, .2f, 1, 0.25f).Kill();
         transform.DOJump(transform.position + randomVector, .2f, 1, 0.25f);
-        //
+        */
 
         Debug.Log(transform.name +" takes " +  damage + " damage.");
 

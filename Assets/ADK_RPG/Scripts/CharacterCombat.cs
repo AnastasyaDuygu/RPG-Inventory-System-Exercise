@@ -1,20 +1,20 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterStats))]
+[RequireComponent(typeof(CharacterStats), typeof(Rigidbody))]
 public class CharacterCombat : MonoBehaviour
 {
     public float attackSpeed = 1f;
     private float attackCooldown = 0f;
 
+    Rigidbody rb;
     CharacterStats myStats;
     private float attackDelay = .6f;
-
-    public event System.Action OnAttack; //delegate with return void
 
     private void Start()
     {
         myStats = GetComponent<CharacterStats>();
+        rb = GetComponent<Rigidbody>();
     }
     private void Update()
     {
@@ -26,20 +26,15 @@ public class CharacterCombat : MonoBehaviour
         {
             StartCoroutine(DoDamage(targetStats, attackDelay));
 
-            if (OnAttack != null)
-            {
-                OnAttack(); //Triggered when attack occurs
-            }
-
             attackCooldown = 1f / attackSpeed;
         }
         
     }
-
     IEnumerator DoDamage(CharacterStats stats, float delay)
     {
         yield return new WaitForSeconds(delay);
-
+        //rb.addforce to make the target jump back when attacked
         stats.TakeDamage(myStats.damage.getValue());
+
     }
 }
