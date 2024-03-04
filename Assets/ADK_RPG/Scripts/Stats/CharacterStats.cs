@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
@@ -24,6 +25,14 @@ public class CharacterStats : MonoBehaviour
         damage = Mathf.Clamp(damage, 0, Maxhealth);
 
         currentHealth -= damage;
+
+        //character who takes damage jumps
+        var randomAngle = Random.Range(0f, 10f);
+        var randomVector = Quaternion.AngleAxis(randomAngle, Vector3.up) * (0 * Vector3.forward);
+        //transform.DOJump(transform.position + randomVector, .2f, 1, 0.25f).Kill();
+        transform.DOJump(transform.position + randomVector, .2f, 1, 0.25f);
+        //
+
         Debug.Log(transform.name +" takes " +  damage + " damage.");
 
         if (currentHealth <= 0)

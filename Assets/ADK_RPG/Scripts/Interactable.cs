@@ -13,7 +13,7 @@ public class Interactable : MonoBehaviour
     public virtual void Interact()
     {
         //overwrite
-        Debug.Log("Interacting with " + this.name);
+        //Debug.Log("Interacting with " + this.name);
     }
 
     private void Update()
