@@ -4243,6 +4243,7 @@ MonoBehaviour:
   slotsAlwaysOpenParent: {fileID: 788193244}
   slotsParent: {fileID: 305388089}
   inventoryCanvas: {fileID: 1243776239}
+  allSlots: []
 --- !u!1 &1684435222
 GameObject:
   m_ObjectHideFlags: 0
