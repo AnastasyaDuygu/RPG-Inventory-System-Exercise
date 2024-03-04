@@ -6,7 +6,7 @@ public class CharacterStats : MonoBehaviour
     public int Maxhealth = 100;
 
     public Stat protectiveItem;
-
+    public Stat damage;
     private void Awake()
     {
         currentHealth = Maxhealth;
@@ -15,7 +15,7 @@ public class CharacterStats : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            TakeDamage(10);
+            TakeDamage(damage.getValue());
         }
     }
     public void TakeDamage(int damage)
