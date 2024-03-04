@@ -6,7 +6,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] Transform slotsAlwaysOpenParent;
     [SerializeField] Transform slotsParent;
     [SerializeField] GameObject inventoryCanvas;
-    InventorySlot[] slotsAlwaysOpen;
+    public InventorySlot[] slotsAlwaysOpen;
     InventorySlot[] slots;
 
     Inventory inventory;
@@ -30,8 +30,9 @@ public class InventoryUI : MonoBehaviour
     {
         Debug.Log("Updating UI");
         var lastSlot = slotsAlwaysOpen[slotsAlwaysOpen.Length - 1];
-        if (lastSlot != null) //if always open slots are NOT full
+        if (lastSlot.isEmpty) //if always open slots are NOT full
         {
+            Debug.Log("ALWAYS OPEN NOT FULL");
             for (int i = 0; i < slotsAlwaysOpen.Length; i++)
             {
                 if (i < inventory.items.Count) //there are items to add
@@ -46,9 +47,10 @@ public class InventoryUI : MonoBehaviour
         }
         else //if always open slots ARE full
         {
-            for(int i = 0;i < slots.Length; i++)
+            Debug.Log("ALWAYS OPEN IS FULL");
+            for (int i = 0;i < slots.Length; i++)
             {
-                if (i < inventory.items.Count) //there are items to add
+                if (i < inventory.items.Count - slotsAlwaysOpen.Length) //there are items to add
                 {
                     slots[i].AddItem(inventory.items[i]);
                 }

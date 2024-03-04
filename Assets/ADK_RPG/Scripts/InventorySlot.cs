@@ -5,7 +5,7 @@ public class InventorySlot : MonoBehaviour
     [SerializeField] Image icon;
     public Item item;
 
-    bool isEmpty = true;
+    public bool isEmpty = true;
 
     public void AddItem(Item newItem)
     {
