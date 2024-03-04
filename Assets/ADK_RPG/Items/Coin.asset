@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cbf55ce3de76a044ae261d9e3ca8841, type: 3}
-  m_Name: New Coin
+  m_Name: Coin
   m_EditorClassIdentifier: 
   name: Coin
   icon: {fileID: 21300000, guid: 76a6914ca37c1674ea5404ad21bc11c7, type: 3}

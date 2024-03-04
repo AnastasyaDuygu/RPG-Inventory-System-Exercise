@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff899708d06e32b4288a8379b2082c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  space: 20
+  space: 27
   items: []
 --- !u!1 &147226932
 GameObject:
@@ -643,10 +643,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 1835914571877742384, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1835914571877742387, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -850,10 +846,6 @@ PrefabInstance:
     - target: {fileID: 1835914571877742380, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
       propertyPath: m_Name
       value: Slot (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1835914571877742384, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1835914571877742387, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
       propertyPath: m_Pivot.x
@@ -1374,7 +1366,6 @@ GameObject:
   - component: {fileID: 788193246}
   - component: {fileID: 788193245}
   - component: {fileID: 788193247}
-  - component: {fileID: 788193248}
   m_Layer: 5
   m_Name: Always Open Inventory
   m_TagString: Untagged
@@ -1471,19 +1462,6 @@ MonoBehaviour:
   m_Spacing: {x: -320, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &788193248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788193243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58dd0676bcd9c3743b67b83e30c9d5f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryUI: {fileID: 1637956504}
 --- !u!1001 &922264762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2460,7 +2438,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1244553980}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1637956504}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: OnCloseButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1244553980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2843,10 +2833,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 1835914571877742384, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1835914571877742387, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2948,10 +2934,6 @@ PrefabInstance:
     - target: {fileID: 1835914571877742380, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
       propertyPath: m_Name
       value: Slot (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1835914571877742384, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1835914571877742387, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
       propertyPath: m_Pivot.x
@@ -3261,6 +3243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92711488a93822b408560147421c5171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slotsAlwaysOpenParent: {fileID: 788193244}
   slotsParent: {fileID: 305388089}
   inventoryCanvas: {fileID: 1243776239}
 --- !u!1 &1684435222
@@ -3626,10 +3609,6 @@ PrefabInstance:
     - target: {fileID: 1835914571877742380, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
       propertyPath: m_Name
       value: Slot (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1835914571877742384, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1835914571877742387, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
       propertyPath: m_Pivot.x
@@ -4152,10 +4131,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 1835914571877742384, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1835914571877742387, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4647,10 +4622,6 @@ PrefabInstance:
     - target: {fileID: 1835914571877742380, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
       propertyPath: m_Name
       value: Slot
-      objectReference: {fileID: 0}
-    - target: {fileID: 1835914571877742384, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1835914571877742387, guid: 6a09ef3687a322a48a8c6daa04737489, type: 3}
       propertyPath: m_Pivot.x
