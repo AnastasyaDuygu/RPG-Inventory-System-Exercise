@@ -1682,7 +1682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1.5
   interactionTransform: {fileID: 550862987}
-  item: {fileID: 11400000, guid: 643b00b60b7943f4d8742d6429637d63, type: 2}
+  item: {fileID: 11400000, guid: db9ef0ea75d84324bb318463a5efed74, type: 2}
 --- !u!65 &550862984
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3358,7 +3358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1.5
   interactionTransform: {fileID: 1164270921}
-  item: {fileID: 11400000, guid: 643b00b60b7943f4d8742d6429637d63, type: 2}
+  item: {fileID: 11400000, guid: db9ef0ea75d84324bb318463a5efed74, type: 2}
 --- !u!65 &1164270923
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6068,7 +6068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1.5
   interactionTransform: {fileID: 2058134116}
-  item: {fileID: 11400000, guid: 643b00b60b7943f4d8742d6429637d63, type: 2}
+  item: {fileID: 11400000, guid: db9ef0ea75d84324bb318463a5efed74, type: 2}
 --- !u!65 &2058134118
 BoxCollider:
   m_ObjectHideFlags: 0
