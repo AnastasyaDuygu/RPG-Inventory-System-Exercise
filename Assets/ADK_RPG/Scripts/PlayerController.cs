@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,11 +11,18 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] LayerMask movementMask;
 
+    EnemyController enemy;
+    CharacterStats characterStats;
+
+
     private float range = 100;
     private void Start()
     {
         cam = Camera.main;
         motor = GetComponent<PlayerMotor>();
+        enemy = FindObjectOfType<EnemyController>();
+        characterStats = GetComponent<CharacterStats>();
+        characterStats.onPlayerAttackedCallback += OnTakeDamage; //subscribe method to event
     }
     void Update()
     {
@@ -67,5 +75,12 @@ public class PlayerController : MonoBehaviour
         }
         newFocus.OnFocused(transform);
         
+    }
+    public void OnTakeDamage()
+    {
+        Debug.Log("PLAYER TAKES DAMAGE");
+        var direction = transform.position.normalized - enemy.transform.position.normalized;
+        transform.DOJump(transform.position + direction, .2f, 1, 0.25f);
+        //transform.position = transform.position + direction;
     }
 }

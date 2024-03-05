@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
+    public delegate void OnEnemyAttacked();
+    public OnEnemyAttacked onEnemyAttackedCallback;
+
+    public delegate void OnPlayerAttacked();
+    public OnPlayerAttacked onPlayerAttackedCallback;
+
     public float currentHealth { get; set; }
     public int Maxhealth = 100;
 
@@ -32,6 +38,10 @@ public class CharacterStats : MonoBehaviour
         //transform.DOJump(transform.position + randomVector, .2f, 1, 0.25f).Kill();
         transform.DOJump(transform.position + randomVector, .2f, 1, 0.25f);
         */
+        if (onEnemyAttackedCallback != null && name == "Enemy") //emit event
+            onEnemyAttackedCallback.Invoke();
+        else if (onPlayerAttackedCallback != null && name == "Player")
+            onPlayerAttackedCallback.Invoke();
 
         Debug.Log(transform.name +" takes " +  damage + " damage.");
 
