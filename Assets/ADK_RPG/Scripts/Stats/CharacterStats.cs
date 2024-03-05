@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
-    public int currentHealth { get; set; }
+    public float currentHealth { get; set; }
     public int Maxhealth = 100;
 
     public Stat protectiveItem;

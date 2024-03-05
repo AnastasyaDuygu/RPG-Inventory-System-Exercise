@@ -12,7 +12,6 @@ public class Item : ScriptableObject
     public virtual bool Use()
     {
         //overridde
-        //TODO: if button right click use item, else drop item onto the environment
         Debug.Log("Using " + name);
 
         //on default items are usable
