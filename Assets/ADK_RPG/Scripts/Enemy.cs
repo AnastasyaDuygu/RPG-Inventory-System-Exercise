@@ -30,7 +30,7 @@ public class Enemy : Interactable
 
     public void OnTakeDamage()
     {
-        Debug.Log("PLAYER TAKES DAMAGE");
+        Debug.Log("ENEMY TAKES DAMAGE");
         var direction = transform.position.normalized - player.transform.position.normalized;
         transform.DOJump(transform.position + direction, .2f, 1, 0.25f);
         //transform.position = transform.position + direction;
