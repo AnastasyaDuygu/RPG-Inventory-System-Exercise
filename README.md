@@ -5,18 +5,27 @@
   
 
 #### All the **credits** for this project goes to Brackeys & Sebastian Lague's [How to make an RPG in Unity](https://www.youtube.com/watch?v=nu5nyrB9U_o&list=PLPV2KyIb3jR4KLGCCAciWQ5qHudKtYeP7) series on Youtube.
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<br>
+<p align="center">
+    <img src="Screenshots/rpg_1.png" alt="In-Game" />
+</p>
+<br>
+
 ## Introduction
 
 !This is an exercise project, **NOT** a **game**.  
 My main objective in making this project was to implement an inventory system & learning/using scriptable objects. In this simple exercise you can control the player using right and left mouse button to walk or interact with objects, you can adjust the camera. And also attack or be attacked by an enemy AI.
 
-![alt-text-1](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<div style="display: flex; justify-content: space-between;">
+    <img src="Screenshots/rpg_2.png" width="400" height="200" alt="In-Game" />
+    <img src="Screenshots/rpg_3.png" width="400" height="200" alt="In-Game" />
+</div>
+
 ## Features
 
 - Control player with left & right mouse buttons: **left click** on ground **to walk**, **right click** on objects **to interact**.
 - Control the **camera** using **A, D to look left or right**, **and mouse scroll wheel** to **adjust zoom** value.
-- There are **4 types** of **objects** in this scene:
+- There are **4 types** of **objects** in this scene:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **a. The blue box :** Player **cannot walk over** this object can only walk around this box to get from one side to another.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **b. The yellow sphere :** When player **right clicks** this object, player walks towards the object and stops in front of the object. This **focus** can be broken by clicking another interactable object or left clicking on the ground to walk somewhere else. Once player is infront of the object and is still focused, **if you move the sphere anywhere on the scene the player will keep following the sphere** until you click somewhere else.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **c. Coins :** Player can **collect coins by right clicking** on them. This will put the coin in the players' inventory. Once the coin is in the players' **inventory** you can **right click the slot storing the coin to drop the coin** back into the world wherever you are in the world. Since coin is not a usable item, left clicking the coin icon on the inventory slot will trigger a debug log message stating that coin is not a usable item.  
@@ -24,6 +33,18 @@ My main objective in making this project was to implement an inventory system & 
 
 - There is an **enemy AI** on the scene. When player gets in the enemys' notice radius enemy will start **chasing the player** and will hit the player until it dies, player runs away or the player dies. **Player can attack** the enemy **using right click**. There is a **cooldown** on the attack preventing span clicking.
 - The **inventory system** is **inspired by minecraft**, other than objects of same type not stacking, it pretty much behaves the same way. Player can **see** their **whole inventory** by clicking **"I"** on the keyboard.
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="Screenshots/rpg_4.png" width="400" height="200" alt="In-Game" />
+    <img src="Screenshots/rpg_5.png" width="400" height="200" alt="In-Game" />
+    <img src="Screenshots/rpg_6.png" width="400" height="200" alt="In-Game" />
+    <img src="Screenshots/rpg_7.png" width="400" height="200" alt="In-Game" />
+    <img src="Screenshots/rpg_8.png" width="400" height="200" alt="In-Game" />
+    <img src="Screenshots/rpg_9.png" width="400" height="200" alt="In-Game" />
+    <img src="Screenshots/rpg_10.png" width="400" height="200" alt="In-Game" />
+    <img src="Screenshots/rpg_11.png" width="400" height="200" alt="In-Game" />
+</div>
+
 ## Installation
 
 
